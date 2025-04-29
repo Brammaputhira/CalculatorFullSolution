@@ -1,0 +1,12 @@
+using System.ComponentModel.DataAnnotations;
+
+public class User
+{
+    public int Id { get; set; }
+    public string Username { get; set; }
+    public string PasswordHash { get; set; } // Store hashed passwords
+    [Required]
+    [MaxLength(255)] // Set the maximum length for the Email column
+    public string Email { get; set; }   
+    public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
+}
